@@ -1,3 +1,5 @@
+// This file allows you to say that the main file is the src folder and which allows you to avoid putting relative paths. We can start with the name of the folder as long as it is in src
+
 {
     "compilerOptions": {
         "baseUrl": "./src",
