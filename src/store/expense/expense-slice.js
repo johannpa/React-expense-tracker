@@ -5,4 +5,13 @@ export const expenseSlice = createSlice({
     initialState: {
         expenseList: [{name: "Ordinateur", price: 300}],
     },
+    reducers: {
+        addExpense: (currentSlice, action) => {
+            currentSlice.expenseList.push(action.payload);
+        }
+    }
 });
+
+
+const { addExpense } = expenseSlice.actions;
+export { addExpense };
