@@ -1,4 +1,4 @@
-import { ExpenseInput } from "components/ExpenseInput/ExpenseInput";
+import { ExpenseInput } from "containers/ExpenseInput/ExpenseInput";
 import s from "./style.module.css";
 
 export function App() {
