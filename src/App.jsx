@@ -1,8 +1,12 @@
 import { ExpenseInput } from "containers/ExpenseInput/ExpenseInput";
 import s from "./style.module.css";
 import { List } from "components/List/List";
+import { useSelector } from "react-redux";
 
 export function App() {
+  const expenseList = useSelector(store => store.EXPENSE.expenseList);
+
+  console.log(expenseList);
   return (
     <div className={s.main_container}>
       <div className={`row ${s.header}`}>
@@ -18,7 +22,7 @@ export function App() {
           <ExpenseInput/>
         </div>
         <div className={`col-11 col-md-6 col-lg-4 ${s.expense_list}`}>
-          <List items={[{name: "Apple", price: 300}]}/>
+          <List items={expenseList}/>
           <div className={`col-12 ${s.expense_total}`}>
             ExpenseTotal
           </div>
