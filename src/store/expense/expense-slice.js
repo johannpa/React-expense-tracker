@@ -8,7 +8,10 @@ export const expenseSlice = createSlice({
     },
     reducers: {
         addExpense: (currentSlice, action) => {
-            currentSlice.expenseList.push(action.payload);
+            currentSlice.expenseList.push({
+              ...action.payload,
+              price: Number.parseFloat(action.payload.price),
+            });
         },
         setIncome: (currentSlice, action) => {
             currentSlice.income = Number.parseFloat(action.payload);
