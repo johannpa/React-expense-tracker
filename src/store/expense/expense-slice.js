@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 export const expenseSlice = createSlice({
     name: "expenseSlice",
@@ -9,12 +9,15 @@ export const expenseSlice = createSlice({
     reducers: {
         addExpense: (currentSlice, action) => {
             currentSlice.expenseList.push(action.payload);
+        },
+        setIncome: (currentSlice, action) => {
+            currentSlice.income = action.payload;
         }
     }
 });
 
 
-const { addExpense } = expenseSlice.actions;
+const { addExpense, setIncome } = expenseSlice.actions;
 
 
-export { addExpense };
+export { addExpense, setIncome };
