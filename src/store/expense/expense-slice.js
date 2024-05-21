@@ -11,7 +11,7 @@ export const expenseSlice = createSlice({
             currentSlice.expenseList.push(action.payload);
         },
         setIncome: (currentSlice, action) => {
-            currentSlice.income = action.payload;
+            currentSlice.income = Number.parseFloat(action.payload);
         }
     }
 });
