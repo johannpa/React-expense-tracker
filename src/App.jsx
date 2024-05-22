@@ -3,7 +3,7 @@ import s from "./style.module.css";
 import { List } from "components/List/List";
 import { useSelector } from "react-redux";
 import { IncomeInput } from "containers/IncomeInput/IncomeInput";
-import { ExpenseTotal } from "components/ExpenseTotal/ExpenseTotal";
+import { ExpenseTotal } from "containers/ExpenseTotal/ExpenseTotal";
 
 export function App() {
   const expenseList = useSelector(store => store.EXPENSE.expenseList);
