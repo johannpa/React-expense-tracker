@@ -15,6 +15,7 @@ const persistConfig = {
     key: "root",
     version: 1,
     storage,
+    whitelist: ["EXPENSE"],
 }
 
 const rootReducers = combineReducers({
