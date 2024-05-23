@@ -4,7 +4,7 @@ export const loggerMiddleware =  createListenerMiddleware();
 
 loggerMiddleware.startListening({
     predicate:(action) => {
-        return true;
+        return action.type === "expenseSlice/addExpense";
     },
     effect: async (action, listenerAPI) => {
         console.log(action);
