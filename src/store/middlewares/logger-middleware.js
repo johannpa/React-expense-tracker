@@ -6,7 +6,8 @@ loggerMiddleware.startListening({
     predicate:(action) => {
         return true;
     },
-    effect: async (action) => {
+    effect: async (action, listenerAPI) => {
         console.log(action);
+        console.log(listenerAPI.getState());
     }
 })
