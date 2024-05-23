@@ -9,6 +9,7 @@ import { persistStore, persistReducer,
     PURGE,
     REGISTER, 
 } from "redux-persist";
+import { loggerMiddleware } from "./middlewares/logger-middleware";
 
 
 const persistConfig = {
@@ -31,10 +32,10 @@ const store = configureStore({
           serializableCheck: {
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
           },
-        }),
+        }).prepend(loggerMiddleware.middleware)
 });
 
 
-const persistore = persistStore(store);
+const persistor = persistStore(store);
 
-export { store, persistore };
+export { store, persistor };
