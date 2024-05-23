@@ -20,4 +20,7 @@ const store = configureStore({
     reducer: persistedReducers,
 });
 
-export { store };
+
+const persistore = persistStore(store);
+
+export { store, persistore };
